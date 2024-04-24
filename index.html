@@ -3,39 +3,59 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="./style/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>A simple RPG</title>
   </head>
   <body>
-    <div id="game">
-      <div id="stats">
-        <span class="stat"
-          >XP: <strong><span id="xpText">0</span></strong></span
-        >
-        <span class="stat"
-          >Health: <strong><span id="healthText">100</span></strong></span
-        >
-        <span class="stat"
-          >Gold: <strong><span id="goldText">50</span></strong></span
-        >
+    <div class="header"><img src="./img/font-material-04.svg" alt="" /></div>
+    <div class="container">
+      <div id="game">
+        <div>
+          <div id="stats">
+            <span class="stat"
+              >XP: <strong><span id="xpText">0</span></strong></span
+            >
+            <span class="stat"
+              >Health: <strong><span id="healthText">100</span></strong></span
+            >
+            <span class="stat"
+              >Gold: <strong><span id="goldText">50</span></strong></span
+            >
+          </div>
+          <div id="monsterStats">
+            <span class="stat"
+              >Monster Name: <strong><span id="monsterName"></span></strong
+            ></span>
+            <span class="stat"
+              >Health: <strong><span id="monsterHealth"></span></strong
+            ></span>
+          </div>
+        </div>
+        <div>
+          <div id="text">
+            Hey, dumbass! Guess what? You've landed yourself in a SOYA dungeon.
+            Ain't gonna be a cakewalk getting out without a few kicks in the
+            rear! Best of luck, and toss some cash my way when you can...
+            cheapskate! <br />
+            Click one of the three buttons below.
+          </div>
+        </div>
       </div>
       <div id="controls">
-        <button id="button1">Go to store</button>
-        <button id="button2">Go to cave</button>
-        <button id="button3">Fight dragon</button>
+        <button id="button1">A</button>
+        <button id="button2">B</button>
+        <button id="button3">C</button>
       </div>
-      <div id="monsterStats">
-        <span class="stat"
-          >Monster Name: <strong><span id="monsterName"></span></strong
-        ></span>
-        <span class="stat"
-          >Health: <strong><span id="monsterHealth"></span></strong
-        ></span>
-      </div>
-      <div id="text">
-        Welcome to Dragon Repeller. You must defeat the dragon that is
-        preventing people from leaving the town. You are in the town square.
-        Where do you want to go? Use the buttons above.
-      </div>
+      <img
+        class="background"
+        src="./img/239d5d03019be9622b1701bc2e8da691.png"
+        alt=""
+      />
     </div>
     <script src="./script/script.js"></script>
   </body>

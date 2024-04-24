@@ -1,48 +1,85 @@
 html {
-    scroll-behavior: smooth;
     overflow-x: hidden;
     overflow-y: hidden;
 }
 
 body {
-    background-color: #0a0a23;
+    color: #3e3e4a;
+    font-size: 2.2vh;
+    display: block;
+}
+
+strong {
+    font-weight: 600;
+    font-size: 2.3vh;
+}
+
+.header {
+    position: fixed;
+    z-index: 3;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    width: 100%;
+}
+
+.header img {
+    width: 14%;
+    z-index: 3;
+    margin-top: 60px;
+    margin-left: 50px;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    font-size: 16px;
+}
+
+.background {
+    height: 110vh;
+    position: absolute;
+    /* opacity: .6; */
+    z-index: 1;
 }
 
 #text {
-    background-color: #0a0a23;
-    color: #ffffff;
-    padding: 10px;
+    line-height: 2vh;
 }
 
 #game {
-    max-width: 500px;
-    height: 80vh;
-    background-color: #ffffff;
-    color: #ffffff;
+    font-family: "Jersey 10";
+    background-color: #d1e178;
+    width: 30vh;
+    height: 17%;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 1px;
+    position: absolute;
+    top: 20%;
+    margin-left: -22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+    box-shadow: inset 10px 10px 20px rgba(0, 0, 0, 0.487), inset -10px -10px 20px rgba(0, 0, 0, 0.388);
 }
 
-#controls,
-#stats {
-    border: 1px solid #0a0a23;
-    padding: 5px;
-    color: #0a0a23;
+
+
+#controls {
+    position: absolute;
+    display: flex;
 }
 
 #monsterStats {
     display: none;
-    border: 1px solid #0a0a23;
+    /* border: 1px solid #0a0a23; */
     padding: 5px;
-    color: #ffffff;
-    background-color: #c70d0d;
+    color: #ffffffa7;
+    background-color: #c70d0da8;
 }
 
 .stat {
@@ -50,9 +87,30 @@ body {
 }
 
 button {
+    background-color: transparent;
+    flex: 1;
+    border: transparent;
+    z-index: 2;
     cursor: pointer;
-    color: #0a0a23;
-    background-color: #feac32;
-    background-image: linear-gradient(#fecc4c, #ffac33);
-    border: 3px solid #feac32;
+    position: absolute;
+    border-radius: 50%;
+    font-size: 1.65vh;
+    color: rgba(209, 209, 209, 0.715);
+}
+
+#button1 {
+    top: 15vh;
+    margin-left: 18.1vh;
+}
+
+#button2 {
+    top: 22vh;
+    margin-left: 15.8vh;
+
+}
+
+#button3 {
+    top: 17.5vh;
+    margin-left: 10vh;
+
 }

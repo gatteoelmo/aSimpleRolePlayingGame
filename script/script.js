@@ -42,64 +42,53 @@ const monsters = [
 const locations = [
   {
     name: "town square",
-    "button text": ["Go to store", "Go to cave", "Fight dragon"],
     "button functions": [goStore, goCave, fightDragon],
-    text: "You are in the town square. You see a sign that says \"Store\"."
+    text: "You are in the town square. You see a sign that says \"Store\". <br> [A] Go to store. <br> [B] Go to cave. <br> [C] Fight dragon."
   },
   {
     name: "store",
-    "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
     "button functions": [buyHealth, buyWeapon, goTown],
-    text: "You enter the store."
+    text: "You enter the store. <br> [A] Buy 10 health (10 gold). <br> [B] Buy weapon (30 gold). <br> [C] Go to town square."
   },
   {
     name: "cave",
-    "button text": ["Fight slime", "Fight fanged beast", "Go to town square"],
     "button functions": [fightSlime, fightBeast, goTown],
-    text: "You enter the cave. You see some monsters."
+    text: "You enter the cave. You see some monsters. <br> [A] Fight slime. <br> [B] Fight fanged beast. <br> [C] Go to town square."
   },
   {
     name: "fight",
-    "button text": ["Attack", "Dodge", "Run"],
     "button functions": [attack, dodge, goTown],
-    text: "You are fighting a monster."
+    text: "You are fighting a monster. <br> [A] Attack! <br> [B] Dodge. <br> [C] Run."
   },
   {
     name: "kill monster",
-    "button text": ["Go to town square", "Go to town square", "Go to town square"],
     "button functions": [goTown, goTown, easterEgg],
-    text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
+    text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold. <br> [A] Go to town square. <br> [B] Go to town square. <br> [C] Go to town square.'
   },
   {
     name: "lose",
-    "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
     "button functions": [restart, restart, restart],
-    text: "You die. &#x2620;"
+    text: "You die. &#x2620; <br> [A] REPLAY? <br> [B] REPLAY? <br> [C] REPLAY?"
   },
   { 
     name: "win", 
-    "button text": ["REPLAY?", "REPLAY?", "REPLAY?"], 
     "button functions": [restart, restart, restart], 
-    text: "You defeat the dragon! YOU WIN THE GAME! &#x1F389;" 
+    text: "You defeat the dragon! YOU WIN THE GAME! &#x1F389; <br> [A] REPLAY? <br> [B] REPLAY? <br> [C] REPLAY?" 
   },
   {
     name: "easter egg",
-    "button text": ["2", "8", "Go to town square?"],
     "button functions": [pickTwo, pickEight, goTown],
-    text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!"
+    text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win! <br> [A] 2. <br> [B] 8. <br> [C] Go to town square?"
   }
 ];
 
 // initialize buttons
-button1.onclick = goStore;
-button2.onclick = goCave;
-button3.onclick = fightDragon;
+button1.onclick = goTown;
+button2.onclick = goTown;
+button3.onclick = goTown;
 
 function update(location) {
   monsterStats.style.display = "none";
-  button1.innerText = location["button text"][0];
-  button2.innerText = location["button text"][1];
-  button3.innerText = location["button text"][2];
   button1.onclick = location["button functions"][0];
   button2.onclick = location["button functions"][1];
   button3.onclick = location["button functions"][2];
@@ -120,7 +109,7 @@ function goCave() {
 
 function buyHealth() {
   if (gold >= 10) {
-    gold -= 10;
+    gold = gold - 10;
     health += 10;
     goldText.innerText = gold;
     healthText.innerText = health;
@@ -144,7 +133,7 @@ function buyWeapon() {
     }
   } else {
     text.innerText = "You already have the most powerful weapon!";
-    button2.innerText = "Sell weapon for 15 gold";
+    text.innerText += "[B] Sell weapon for 15 gold";
     button2.onclick = sellWeapon;
   }
 }
@@ -187,6 +176,7 @@ function goFight() {
 function attack() {
   text.innerText = "The " + monsters[fighting].name + " attacks.";
   text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
+  text.innerText += "\n [A] Attack! \n [B] Dodge. \n [C] Run."
   health -= getMonsterAttackValue(monsters[fighting].level);
   if (isMonsterHit()) {
     monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
@@ -221,7 +211,7 @@ function isMonsterHit() {
 }
 
 function dodge() {
-  text.innerText = "You dodge the attack from the " + monsters[fighting].name;
+  text.innerText = "You dodge the attack from the " + monsters[fighting].name + "\n [A] Attack! \n [B] Dodge. \n [C] Run.";
 }
 
 function defeatMonster() {
