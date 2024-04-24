@@ -23,7 +23,7 @@ strong {
 }
 
 .header img {
-    width: 14%;
+    width: 12%;
     z-index: 3;
     margin-top: 60px;
     margin-left: 50px;
@@ -64,7 +64,7 @@ strong {
     flex-direction: column;
     justify-content: space-between;
     z-index: 2;
-    box-shadow: inset 10px 10px 20px rgba(0, 0, 0, 0.487), inset -10px -10px 20px rgba(0, 0, 0, 0.388);
+    box-shadow: inset 10px 10px 20px rgba(0, 0, 0, 0.487), inset -10px -10px 20px rgba(0, 0, 0, 0.394);
 }
 
 
@@ -112,5 +112,71 @@ button {
 #button3 {
     top: 17.5vh;
     margin-left: 10vh;
+
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 90px;
+    bottom: 70px;
+    z-index: 4;
+    font-family: "Roboto";
+    font-size: 2.1vh;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .background {
+        height: 150vh;
+        position: absolute;
+        top: 400px;
+        margin-left: 700px;
+        z-index: 1;
+    }
+
+    #game {
+        font-family: "Jersey 10";
+        background-color: #d1e178;
+        width: 45vh;
+        height: 28%;
+        padding: 10px;
+        border-radius: 1px;
+        position: absolute;
+        top: 52%;
+        margin-left: 622px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 2;
+        box-shadow: inset 10px 10px 20px rgba(0, 0, 0, 0.487), inset -10px -10px 20px rgba(0, 0, 0, 0.394);
+    }
+
+    .header img {
+        width: 31%;
+        z-index: 3;
+        margin-top: 60px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #button1 {
+        top: 64vh;
+        margin-left: 41.1vh;
+    }
+
+    #button2 {
+        top: 73.5vh;
+        margin-left: 38.3vh;
+    }
+
+    /* mi manca solo fare il button3 */
 
 }
