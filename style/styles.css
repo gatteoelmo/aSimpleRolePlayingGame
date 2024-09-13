@@ -19,11 +19,11 @@ strong {
     z-index: 3;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .header img {
-    width: 12%;
+    width: 30%;
     z-index: 3;
     margin-top: 60px;
     margin-left: 50px;
@@ -63,7 +63,7 @@ strong {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    z-index: 2;
+    z-index: 0;
     box-shadow: inset 10px 10px 20px rgba(0, 0, 0, 0.487), inset -10px -10px 20px rgba(0, 0, 0, 0.394);
 }
 
@@ -133,48 +133,55 @@ a {
 
 
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 700px) {
+
+    html {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
     .background {
-        height: 150vh;
-        position: absolute;
-        top: 400px;
-        margin-left: 700px;
-        z-index: 1;
+        background-size: cover;
+        margin-left: 0%;
+        height: 110vh;
     }
 
     #game {
-        font-family: "Jersey 10";
-        background-color: #d1e178;
-        width: 45vh;
-        height: 28%;
-        padding: 10px;
-        border-radius: 1px;
-        position: absolute;
-        top: 52%;
-        margin-left: 622px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        z-index: 2;
-        box-shadow: inset 10px 10px 20px rgba(0, 0, 0, 0.487), inset -10px -10px 20px rgba(0, 0, 0, 0.394);
+        width: 30.5vh;
+        height: 18%;
+        margin-left: -20px;
+        z-index: 0;
+        margin-top: -5px;
     }
 
     .header img {
-        width: 31%;
-        z-index: 3;
-        margin-top: 60px;
-        margin-left: auto;
-        margin-right: auto;
+
+        margin-top: 0px;
+        margin-left: 10px
     }
 
     #button1 {
-        top: 64vh;
-        margin-left: 41.1vh;
+        top: 15.2vh;
+        margin-left: 18.1vh;
+
     }
 
     #button2 {
-        top: 73.5vh;
-        margin-left: 38.3vh;
+        top: 22vh;
+        margin-left: 16.1vh;
+
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        position: relative;
+        left: 1px;
+        bottom: 50px;
+        z-index: 4;
+        font-family: "Roboto";
+        font-size: 2.1vh;
     }
 
     /* mi manca solo fare il button3 */
