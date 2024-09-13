@@ -114,7 +114,7 @@ function buyHealth() {
     goldText.innerText = gold;
     healthText.innerText = health;
   } else {
-    text.innerText = "You do not have enough gold to buy health.";
+    text.innerHTML = "You do not have enough gold to buy health. <br>[C] Go to town square.";
   }
 }
 
@@ -127,9 +127,9 @@ function buyWeapon() {
       let newWeapon = weapons[currentWeapon].name;
       text.innerText = "You now have a " + newWeapon + ".";
       inventory.push(newWeapon);
-      text.innerText += " In your inventory you have: " + inventory;
+      text.innerHTML += " In your inventory you have: " + inventory + "<br> [A] Buy 10 health (10 gold). <br> [B] Buy weapon (30 gold). <br> [C] Go to town square.";
     } else {
-      text.innerText = "You do not have enough gold to buy a weapon.";
+      text.innerHTML = "You do not have enough gold to buy a weapon. <br> [A] Buy 10 health (10 gold). <br> [C] Go to town square.";
     }
   } else {
     text.innerText = "You already have the most powerful weapon!";
@@ -261,14 +261,14 @@ function pick(guess) {
   }
   text.innerText = "You picked " + guess + ". Here are the random numbers:\n";
   for (let i = 0; i < 10; i++) {
-    text.innerText += numbers[i] + "\n";
+    text.innerText += numbers[i] + ", ";
   }
   if (numbers.includes(guess)) {
-    text.innerText += "Right! You win 20 gold!";
+    text.innerHTML += " Right! You win 20 gold! <br> [C] Go to town square"; ;
     gold += 20;
     goldText.innerText = gold;
   } else {
-    text.innerText += "Wrong! You lose 10 health!";
+    text.innerHTML += " Wrong! You lose 10 health! <br> [C] Go to town square";
     health -= 10;
     healthText.innerText = health;
     if (health <= 0) {
